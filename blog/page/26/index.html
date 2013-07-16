@@ -9,8 +9,8 @@
   <meta name="author" content="Chad Fowler">
 
   
-  <meta name="description" content="(This may be old &quot;news&quot;&#8230;I&#8217;m sometimes kind of slow on
-the uptake) Kelly had no idea why I laughed so loud and hard at this: <a &hellip;">
+  <meta name="description" content="<a
+href="http://www.ruby-talk.org/cgi-bin/vframe.rb/ruby/ruby-talk/84735?84661-84811+split-mode-vertical">www.ruby-talk.org/cgi-bin/vframe.rb/ruby/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,125 @@ the uptake) Kelly had no idea why I laughed so loud and hard at this: <a &hellip
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2003/11/07/ruby-types-and-classes/">Ruby Types and Classes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2003-11-07T00:00:00-06:00" pubdate data-updated="true">2003.11.07</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a
+href="http://www.ruby-talk.org/cgi-bin/vframe.rb/ruby/ruby-talk/84735?84661-84811+split-mode-vertical">www.ruby-talk.org/cgi-bin/vframe.rb/ruby/ruby-talk/84735?84661-84811+split-mode-vertical</a></p>
+<p>
+<p>A near flame-war has broken out on ruby-talk (<a
+href="http://www.ruby-talk.org">www.ruby-talk.org</a>). But, amidst the<br />
+smoldering remains lie some of the most clarifying statements I&#8217;ve<br />
+seen about Ruby&#8217;s class/type system.</p>
+</p>
+<p>
+<p>I have to admit that this thread struck one of my most sensitive nerves in<br />
+the Ruby programming world these days: people coming from statically typed<br />
+languages trying to force-fit dynamically typed languages into behaving<br />
+like their previous languages (e.g. Java, C++, C#). Specifically, new Ruby<br />
+programmers are constantly looking for how to &quot;document<br />
+interfaces&quot; in some strict, contractual way. That&#8217;s fine with<br />
+Java and C#, where it really means something, but in Ruby it&#8217;s<br />
+meaningless to check the class of an object on method invocations. What<br />
+makes it worse is that they show up crusading to save the &quot;loose<br />
+typing&quot; heathens from the damnation that only strict, static typing<br />
+can prevent. I probably sparked the initial flame of the near-war, with a<br />
+post containing:</p>
+</p>
+<pre>
+  As you can see, any code that that relies on this kind of &amp;quot;type checking&amp;quot;
+  in Ruby is naive.  Worse than that, the desire to shoe-horn
+  Ruby into Java-like &amp;quot;strictness&amp;quot; can blind the user into missing the
+  point, and therefore the full benefit, of what Ruby has to offer.
+</pre>
+<p>
+<p>Rich Kilmer (<a
+href="http://richkilmer.blogs.com/ether/">richkilmer.blogs.com/ether/</a>)<br />
+had the following to say about this static-ish type checking:</p>
+</p>
+<pre>
+  The question is whether you write your methods to expect a certain
+  &amp;quot;namespace&amp;quot; (Class/Module), or just simply a set of behaviors.
+</pre>
+<p>
+<p>This is the first time I can remember someone referring to a class or<br />
+module in Ruby as a &quot;namespace&quot; for collecting and grouping<br />
+behaviors. That one sentence really cuts to the core of the matter. Great<br />
+way to look at it.</p>
+</p>
+<p>
+<p>Austin Ziegler (<a href="http://halostatue.ca">halostatue.ca</a>) and David<br />
+Black (<a
+href="http://rubygarden.org/ruby?DavidBlack">rubygarden.org/ruby?DavidBlack</a>)<br />
+joined in with a deluge of great points, with David (who is quickly<br />
+becoming the defacto authority on this issue), specifically focusing on the<br />
+type != class issue:</p>
+</p>
+<p>
+<p>(excuse this being a little out of context)</p>
+</p>
+<pre>
+  But I will want anonymous types, like:
+
+     c = CGI.new
+     c.extend(MyCGIModule)
+     def c.another_method; ...; end
+
+  The *class* of c is CGI, and the module/class *ancestry* of c is
+  [MyCGIModule,CGI,Object,Kernel] (or something), but the *type* of c,
+  Ruby being Ruby, is &amp;quot;the type which is the type of objects which have
+  c's type&amp;quot;.  And that's just fine; there's no need for me to have a
+  name for the type (since it's not encapsulated anywhere except in the
+  interface of c anyway), as long as I design, test, and use c in a
+  sensible manner.  I only needed the name of a class to bootstrap the
+  object, and the name of a module to modify it.  Then type takes over.
+</pre>
+<p>
+<p>So, to distill all this, Ruby has objects which have behaviors (in the form<br />
+of methods). Methods are called via messages sent to objects. As a<br />
+convenience, Ruby provides classes and modules as ways of grouping and<br />
+categorizing semantically related behaviors.</p>
+</p>
+<p>
+<p>I understood this topic before today, but as a result of this discussion, I<br />
+feel like I understand it in a different and deeper way now.</p>
+</p>
+<p>
+<p>If you&#8217;re interested in object oriented programming, whether<br />
+you&#8217;re using a dynamically typed language or not, the thread is<br />
+definitely worth a read.</p>
+</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2003/10/20/music-of-the-21st-century/">Music of the 21st Century?</a></h1>
     
     
@@ -92,7 +211,7 @@ the uptake) Kelly had no idea why I laughed so loud and hard at this: <a &hellip
   
 
 
-<time datetime="2003-10-20T00:00:00+02:00" pubdate data-updated="true">2003.10.20</time>
+<time datetime="2003-10-20T00:00:00-05:00" pubdate data-updated="true">2003.10.20</time>
         
       </p>
     
@@ -138,7 +257,7 @@ href="http://www.languageremoval.com/recall.html">www.languageremoval.com/recall
   
 
 
-<time datetime="2003-10-19T00:00:00+02:00" pubdate data-updated="true">2003.10.19</time>
+<time datetime="2003-10-19T00:00:00-05:00" pubdate data-updated="true">2003.10.19</time>
         
       </p>
     
@@ -241,7 +360,7 @@ playing a bunch of II-V-I licks. A computer can do that.</p>
   
 
 
-<time datetime="2003-10-18T00:00:00+02:00" pubdate data-updated="true">2003.10.18</time>
+<time datetime="2003-10-18T00:00:00-05:00" pubdate data-updated="true">2003.10.18</time>
         
       </p>
     
@@ -317,7 +436,7 @@ learn-one-language-per-year tip.)</p>
   
 
 
-<time datetime="2003-10-12T00:00:00+02:00" pubdate data-updated="true">2003.10.12</time>
+<time datetime="2003-10-12T00:00:00-05:00" pubdate data-updated="true">2003.10.12</time>
         
       </p>
     
@@ -389,7 +508,7 @@ in&#8212;foodless&#8212;by registering late or just showing up.</p>
   
 
 
-<time datetime="2003-10-03T00:00:00+02:00" pubdate data-updated="true">2003.10.03</time>
+<time datetime="2003-10-03T00:00:00-05:00" pubdate data-updated="true">2003.10.03</time>
         
       </p>
     
@@ -451,7 +570,7 @@ would jump at the chance.</p>
   
 
 
-<time datetime="2003-09-20T00:00:00+02:00" pubdate data-updated="true">2003.09.20</time>
+<time datetime="2003-09-20T00:00:00-05:00" pubdate data-updated="true">2003.09.20</time>
         
       </p>
     
@@ -502,7 +621,7 @@ If you&#8217;re in Louisville and interested in some really great cultural event
   
 
 
-<time datetime="2003-08-27T00:00:00+02:00" pubdate data-updated="true">2003.08.27</time>
+<time datetime="2003-08-27T00:00:00-05:00" pubdate data-updated="true">2003.08.27</time>
         
       </p>
     
@@ -638,7 +757,7 @@ of our evolution?</p>
   
 
 
-<time datetime="2003-08-23T00:00:00+02:00" pubdate data-updated="true">2003.08.23</time>
+<time datetime="2003-08-23T00:00:00-05:00" pubdate data-updated="true">2003.08.23</time>
         
       </p>
     
@@ -733,7 +852,7 @@ hedge and prepare for both.</p>
   
 
 
-<time datetime="2003-08-17T00:00:00+02:00" pubdate data-updated="true">2003.08.17</time>
+<time datetime="2003-08-17T00:00:00-05:00" pubdate data-updated="true">2003.08.17</time>
         
       </p>
     
@@ -810,46 +929,6 @@ to skip it the <i>first</i> time around.  But, why couldn&#8217;t my epiphanic m
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2003/07/20/hangin-out/">Hangin Out</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2003-07-20T00:00:00+02:00" pubdate data-updated="true">2003.07.20</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here&#8217;s how we spent our day&#8230;hanging off the side of a mountain.<br />
-I&#8217;ll update later with pictures.</p>
-<p>
-<p><a
-href="http://www.wate.com/Global/story.asp?S=1367221">www.wate.com/Global/story.asp?S=1367221</a></p>
-</p></div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/27/">&larr; Older</a>
@@ -901,6 +980,10 @@ href="http://www.wate.com/Global/story.asp?S=1367221">www.wate.com/Global/story.
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/16/passionate-programmer-a-free-excerpt-almost-every-week/">Passionate Programmer - A free chapter (almost) every week until it&#8217;s done</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/23/immutable-deployments/">Trash Your Servers and Burn Your Code: Immutable Infrastructure and Disposable Components</a>
       </li>
     
@@ -914,10 +997,6 @@ href="http://www.wate.com/Global/story.asp?S=1367221">www.wate.com/Global/story.
     
       <li class="post">
         <a href="/blog/2013/05/20/discipline-stomp-out-cynicism/">Discipline: Stomp Out Cynicism</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/09/who-i-want-to-hire/">Who I Want to Hire</a>
       </li>
     
   </ul>

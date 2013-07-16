@@ -9,7 +9,7 @@
   <meta name="author" content="Chad Fowler">
 
   
-  <meta name="description" content="I&#8217;m spending an almost uninterrupted month on the road this February. I&#8217;ve just come from London to Seattle, after which I&#8217;ll be in &hellip;">
+  <meta name="description" content="One of the first thing you learn when you write your own weblog software and get a decent number of subscribers, is that you need to provide a way &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,49 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2007/02/17/edge-rails-goody-automatic-304-for-views-not-modified/">Edge Rails Goody: Automatic 304 for Views Not Modified</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-02-17T00:00:00-06:00" pubdate data-updated="true">2007.02.17</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One of the first thing you learn when you write your own weblog software and get a decent number of subscribers, is that you need to provide a way for aggregators to tell you which version of a feed they have, so your server can respond by telling the aggregator that it already has the latest version.  Otherwise, you waste a lot of bandwidth sending the same polling client the same data over and over again.</p>
+<p>This is commonly handled in the weblog software world with a combination of the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.19">ETag header</a>, which allows clients and servers to communicate in terms of a <em>variant</em> of a specific resource and the &#8220;304 Not Modified&#8221; <span class="caps">HTTP</span> response and an empty response body.</p>
+<p>This technique isn&#8217;t limited in usefulness to <span class="caps">RSS</span> and Atom feeds.  You could use the same thing with <span class="caps">HTML</span>, <span class="caps">PDF</span>, anything you like.  If the client sends you an ETag and it matches the version you already have, you give it a 304 with an empty response body.</p>
+<p>It turns out that if you use a Web framework with a consistent rendering system, you can bake this kind of behavior right into the framework.</p>
+<p>A few hours ago, David Heinemeier Hansson <a href="http://dev.rubyonrails.org/changeset/6158">did just that</a>.</p>
+<h3>&#8220;Cool, how do I use it?&#8221;</h3>
+<p>If you&#8217;re using Edge Rails, it just happens automatically.</p>
+<p>Who knows if this will still be there in a month, but it&#8217;s at worst a cool experiment and at best a nice optimization for all future Rails applications.</p>
+<p><span class="caps">UPDATE</span>: <a href="http://techno-weenie.net/">Rick Olson</a> just pointed out to me that a weblog is not a good Rails-specific example of when this new feature would be useful, since weblogs can usually be cached at the page level (after which real Web servers can just do their thing with the static content).  He is, of course, right.  I didn&#8217;t mean for the weblog example to carry through into what you would use this feature for.  It <em>would</em> be very useful for situations where content is dynamically generated on, say, a per-user or per-account basis&#8212;-like most of the applications most of us make with Rails.</p></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2007/02/12/airline-english/">Airline English</a></h1>
     
     
@@ -91,7 +134,7 @@
   
 
 
-<time datetime="2007-02-12T00:00:00+01:00" pubdate data-updated="true">2007.02.12</time>
+<time datetime="2007-02-12T00:00:00-06:00" pubdate data-updated="true">2007.02.12</time>
         
       </p>
     
@@ -134,7 +177,7 @@
   
 
 
-<time datetime="2007-02-11T00:00:00+01:00" pubdate data-updated="true">2007.02.11</time>
+<time datetime="2007-02-11T00:00:00-06:00" pubdate data-updated="true">2007.02.11</time>
         
       </p>
     
@@ -287,7 +330,7 @@ ZenTest (3.4.3, 3.2.0)
   
 
 
-<time datetime="2007-02-10T00:00:00+01:00" pubdate data-updated="true">2007.02.10</time>
+<time datetime="2007-02-10T00:00:00-06:00" pubdate data-updated="true">2007.02.10</time>
         
       </p>
     
@@ -324,7 +367,7 @@ ZenTest (3.4.3, 3.2.0)
   
 
 
-<time datetime="2007-02-02T00:00:00+01:00" pubdate data-updated="true">2007.02.02</time>
+<time datetime="2007-02-02T00:00:00-06:00" pubdate data-updated="true">2007.02.02</time>
         
       </p>
     
@@ -362,7 +405,7 @@ ZenTest (3.4.3, 3.2.0)
   
 
 
-<time datetime="2007-02-01T00:00:00+01:00" pubdate data-updated="true">2007.02.01</time>
+<time datetime="2007-02-01T00:00:00-06:00" pubdate data-updated="true">2007.02.01</time>
         
       </p>
     
@@ -397,7 +440,7 @@ ZenTest (3.4.3, 3.2.0)
   
 
 
-<time datetime="2007-01-29T00:00:00+01:00" pubdate data-updated="true">2007.01.29</time>
+<time datetime="2007-01-29T00:00:00-06:00" pubdate data-updated="true">2007.01.29</time>
         
       </p>
     
@@ -450,7 +493,7 @@ ZenTest (3.4.3, 3.2.0)
   
 
 
-<time datetime="2007-01-25T00:00:00+01:00" pubdate data-updated="true">2007.01.25</time>
+<time datetime="2007-01-25T00:00:00-06:00" pubdate data-updated="true">2007.01.25</time>
         
       </p>
     
@@ -486,7 +529,7 @@ ZenTest (3.4.3, 3.2.0)
   
 
 
-<time datetime="2007-01-10T00:00:00+01:00" pubdate data-updated="true">2007.01.10</time>
+<time datetime="2007-01-10T00:00:00-06:00" pubdate data-updated="true">2007.01.10</time>
         
       </p>
     
@@ -555,7 +598,7 @@ ZenTest (3.4.3, 3.2.0)
   
 
 
-<time datetime="2007-01-09T00:00:00+01:00" pubdate data-updated="true">2007.01.09</time>
+<time datetime="2007-01-09T00:00:00-06:00" pubdate data-updated="true">2007.01.09</time>
         
       </p>
     
@@ -567,46 +610,6 @@ ZenTest (3.4.3, 3.2.0)
 <p>It being on Google Video, you can watch it online (embedded here, in fact) or download it to your computer or iPod for off-line viewing (a discovery I&#8217;ve recently made which makes plane trips much more enjoyable).</p>
 <p>Watching on an iPod should be fine, because there are no slides to squint at.</p>
 <p><embed style="width:400px; height:326px;" id="VideoPlayback" align="middle" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=-8984753198261505541&hl=en" quality="best" bgcolor="#ffffff" scale="noScale" salign="TL"  FlashVars="playerMode=embedded"> </embed></p></div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/01/09/advanced-rails-studio/">Advanced Rails Studio</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-01-09T00:00:00+01:00" pubdate data-updated="true">2007.01.09</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Early in my career, I worked as a computer support person in the IT department of a state university.  There was a batch of us that came in at the same time.  We all started at the help desk, worked our way into doing service calls around campus, and eventually graduated to back-room system administration or programming.</p>
-<p>After you graduated into the back room, the next step was to get a <em>real</em> job.  I mean, the university job was fun, but the pay wasn&#8217;t so great.  Especially if you started as a help desk person.  Minimum wage is a bad starting point to get increments from as a computer professional.  So, for that reason, back in the back room it was pretty common to hear colleagues on phone interviews.</p>
-<p>A close friend of mine had a particularly funny interview that a few of us heard his end of.  It went something like this:</p>
-<p>&#8220;I haven&#8217;t used Windows NT <em>Advanced</em> Server, because there&#8217;s no such thing.  I&#8217;ve done <em>advanced things</em> with NT Server.&#8221;  He said it snottily.  Still sore from sitting at the help desk helping users with their &#8220;<span class="caps">FTP</span>&#8221; problems, he found it difficult to hide his distaste for ignorance.  The problem is, there actually <em>was</em> such a thing as Windows NT Advanced Server.  He just hadn&#8217;t heard of it.  Before he finished the interview, another friend went into his cubicle, retrieved a copy of Windows NT Advanced Server, and place it on his desk.</p>
-<p>This brings us to the point of this post.  Yesterday, registration for Pragmatic Studio&#8217;s March <a href="http://pragmaticstudio.com/railsadvanced/index.html">Advanced Rails Studio</a> in Chicago has opened.  So far this year, we&#8217;ve only got one of these on the schedule, and they tend to sell out fast.  Mike, Dave, and I are proud of what we&#8217;ve put together for this class.  We did the first one back in the fall and got great reviews from the attendees.  It was a joy to teach and (we think) a joy to attend.</p>
-<p>Just to be clear, being pretty close to what&#8217;s happening in the Rails world, I can confidently tell you that there&#8217;s no such product or piece of software as &#8220;Advanced Rails&#8221;.  But we&#8217;ve done <em>advanced things</em> with Rails, and we&#8217;re going to show you how. :)</p></div>
   
   
 
@@ -664,6 +667,10 @@ ZenTest (3.4.3, 3.2.0)
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/07/16/passionate-programmer-a-free-excerpt-almost-every-week/">Passionate Programmer - A free chapter (almost) every week until it&#8217;s done</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/23/immutable-deployments/">Trash Your Servers and Burn Your Code: Immutable Infrastructure and Disposable Components</a>
       </li>
     
@@ -677,10 +684,6 @@ ZenTest (3.4.3, 3.2.0)
     
       <li class="post">
         <a href="/blog/2013/05/20/discipline-stomp-out-cynicism/">Discipline: Stomp Out Cynicism</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/09/who-i-want-to-hire/">Who I Want to Hire</a>
       </li>
     
   </ul>
